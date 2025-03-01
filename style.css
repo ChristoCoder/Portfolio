@@ -1,0 +1,111 @@
+html {
+  scroll-behavior: smooth;
+ }
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33%);
+  }
+
+  .carousel-inner .carousel-item-start.active, 
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
+}
+
+section {
+  width: 100%;
+}
+
+.carousel-inner .carousel-item > div {
+  padding: 0 10px;
+}
+
+.carousel-inner {
+  display: flex;
+}
+
+.carousel-item .card {
+  max-height: 700px; /* Ensures cards don’t get too tall */
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-img-top {
+  max-height: 400px; /* Adjust if needed */
+  object-fit: cover; /* Ensures image fills the card properly */
+}
+
+body {
+  font-family: "Bitter", serif;
+  color: black;
+}
+
+h1, h5, a{
+  font-family: "Yeseva One", serif;
+}
+
+.navbar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25), rgba(0,0,0,0));
+}
+
+.nav-link {
+  transition: color 0.3s ease-in-out;
+}
+
+#home {
+  background: linear-gradient(to bottom, #89DBFF, #ffffff);
+}
+
+.title-div {
+  margin-top: min(20%, 7rem);
+}
+
+img {
+  max-width: 100%;
+}
+
+.portrait {
+  max-width: 40rem;
+  max-height: 60%;
+  overflow: hidden;
+}
+
+.aboutme-description-div {
+  width: min(95%, 80rem)
+}
+
+#projects {
+  background: #231F20;
+}
+
+.card-img-top{
+  border-radius:30px;
+  margin-top: 2em;
+  max-height: 500px;;
+}
