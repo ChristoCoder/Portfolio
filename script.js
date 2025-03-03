@@ -59,17 +59,3 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateActiveNav);
   updateActiveNav(); // Run on page load in case user is not at the top
 });
-
-window.addEventListener('scroll', () => {
-  const scrollPosition = window.scrollY;
-  const step = Math.floor(scrollPosition / window.innerHeight) % 4;
-  
-  let borderColors = [
-      "black transparent transparent black",
-      "transparent black black transparent",
-      "black black transparent transparent",
-      "transparent transparent black black"
-  ];
-  
-  document.querySelector('.border-overlay').style.borderColor = borderColors[step];
-});
