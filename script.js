@@ -36,3 +36,40 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function updateActiveNav() {
+    let scrollY = window.scrollY;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 50; // Adjust for navbar height
+      const sectionHeight = section.offsetHeight;
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach((link) => link.classList.remove("active"));
+        document
+          .querySelector(`.nav-link[href="#${section.id}"]`)
+          .classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav);
+  updateActiveNav(); // Run on page load in case user is not at the top
+});
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const step = Math.floor(scrollPosition / window.innerHeight) % 4;
+  
+  let borderColors = [
+      "black transparent transparent black",
+      "transparent black black transparent",
+      "black black transparent transparent",
+      "transparent transparent black black"
+  ];
+  
+  document.querySelector('.border-overlay').style.borderColor = borderColors[step];
+});
